@@ -3,15 +3,15 @@ const isString = (param) => {
 };
 
 export const askUserContinue = () => {
-  const userContinue = confirm(`Do you want to continue?`);
+  const userContinue = confirm(`¿Quieres continuar?`);
   if (!userContinue) {
-    alert(`See you stranger`);
+    alert(`Nos vemos forastero`);
   }
   return userContinue;
 };
 
 export const getUserName = () => {
-  const userName = prompt(`Welcome stranger, what is your name?`);
+  const userName = prompt(`Bienvenido forastero, ¿cómo te llamas?`);
 
   if (userName === null) {
     const userContinue = askUserContinue();
@@ -23,28 +23,32 @@ export const getUserName = () => {
   }
 
   if (!isString(userName)) {
-    alert("That's no a name, stranger, try again");
+    alert("Ese no es un nombre mama..., inténtalo de nuevo.");
     return getUserName();
   }
 
   if (userName.length < 3) {
-    alert("You must be kidding, right? Try again.");
+    alert("Debes estar bromeando, ¿verdad? Intentar otra vez.");
     return getUserName();
   }
 
   if (userName === "") {
-    alert("I'm sure you have a name, let's start over");
+    alert("Estoy seguro de que tienes un nombre, vamos a empezar de nuevo");
     return getUserName();
   }
 
   alert(
-    `Nice to meet you ${userName}, now if you want, ask me a question and I'll try to tell you how likely it is to happen.`
+    `Encantado de conocerte${userName}
+    
+     Soy un robot que responde con probabilidades por lo que..
+     
+     hazme preguntas sobre lo que quieras y te dire que tan posible es`
   );
   return userName;
 };
 
 export const questionUser = () => {
-  const question = prompt(`What would you like to know?`);
+  const question = prompt(`Entonces... que pregunta tienes para mí`);
 
   if (question === null) {
     const questionContinue = askUserContinue();
@@ -56,12 +60,12 @@ export const questionUser = () => {
   }
 
   if (!isString(question)) {
-    alert("Dumb, that's not a question, try again.");
+    alert("Tonto, eso no es una pregunta, inténtalo de nuevo.");
     return questionUser();
   }
 
   if (question.length < 3) {
-    alert("That couldn't be considered a question... Let's try again.");
+    alert("Eso no se puede considerar una pregunta... Intentemos de nuevo.");
     return questionUser();
   }
 
@@ -70,24 +74,26 @@ export const questionUser = () => {
 
 export const AnswerToUser = () => {
   const answer = [
-    "It is certain",
-    "It is decidedly so",
-    "Without a doubt",
-    "Yes definitely",
-    "You may rely on it",
-    "As I see it, yes",
-    "Most likely",
-    "Outlook good",
-    "Yes",
-    "Signs point to yes",
-    "Ask again later",
-    "Better not tell you now",
-    "Cannot predict now",
-    "Don't count on it",
-    "My reply is no",
-    "My sources say no",
-    "Outlook not so good",
-    "Very doubtful",
+    "Es cierto",
+    "Definitivamente es así",
+    "Sin lugar a dudas",
+    "Sí, definitivamente",
+    "Puede confiar en ello",
+    "A mi modo de ver, sí",
+    "Lo más probable",
+    "Buenas perspectivas",
+    "Sí",
+    "Las señales apuntan a que sí",
+    "Mi respuesta sería algo confusa, prueba con otra pregunta",
+    "Pregunta de nuevo más tarde",
+    "Mejor no te lo digo ahora",
+    "No se puede predecir ahora",
+    "Concéntrate y pregunta de nuevo",
+    "No cuentes con ello",
+    "Mi respuesta es no",
+    "Mis fuentes dicen que no",
+    "Las perspectivas no son tan buenas",
+    "Muy dudoso",
   ];
 
   const randomIndex = Math.floor(Math.random() * answer.length);
