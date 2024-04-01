@@ -38,13 +38,11 @@ export const getUserName = () => {
   }
 
   alert(
-    `Encantado de conocerte ${userName}
+    `Encantado de conocerte 🤠 ${userName} 🤠,
     
-    Soy un robot que responde con probabilidades por lo que..
-     
-    hazme preguntas sobre lo que quieras y te dire que tan posible es
-    
-    que eso suceda. 🤖👌`
+    Soy el guardián de los secretos, el mensajero de lo desconocido...
+
+    Haz tus preguntas y desvelaré los misterios del universo. 🌌🔮`
   );
   return userName;
 };
